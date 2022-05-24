@@ -9,7 +9,7 @@ router.get("/persons", function(req,res, next){
         if(err) return next(err);
         res.json(persons);
     });
-})
+});
 
 //segunda ruta, es un renderizado del formulario 
 router.get("/person", function(req,res){
