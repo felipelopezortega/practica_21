@@ -1,23 +1,28 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <link href="assets/style.css" type="text/css"   rel="stylesheet" >
-        <title>Listado</title>
-    </head>
-    <body>
-        <h1>Aquí se muestra el listado de las personas registradas</h1>
-        <table class="default">
-
-            <tr>
-              <th>NSS</th>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Edad</th>
-              <th>Tipo de Sangre</th>
-            </tr>
-        </table>
-
-        
-          
+<head>
+    <link href="assets/style.css" type="text/css" rel="stylesheet">
+    <title>Tabla de personas</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>SSN</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Tipo de Sangre</th>
+        </tr>
+        <% persons.forEach(function(person) { %>
+        <tr>
+            <td> <%= person.nss %> </td>
+            <td> <%= person.nombre %> </td>
+            <td> <%= person.apellido %> </td>
+            <td> <%= person.edad %> </td>
+            <td> <%= person.tipoSangre %> </td>
+        </tr>
+        <% }); %>
+    </table>
          
         <a href="inicio">Volver al inicio</a>
         

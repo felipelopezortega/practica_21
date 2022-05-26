@@ -6,7 +6,9 @@ mongoose.Promise = global.Promise;
 const app = express ();
 app.set("view engine", "ejs");
 app.use(express.urlencoded({extended:false}));
+app.use("/assets", express.static(__dirname + "/public"));
 app.use(personsRoutes);
+
 
 //aquí nos conectamos a nuestra base de datos, introduciendo el código que se nos arroja en mongoose
 mongoose.connect(

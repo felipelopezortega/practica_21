@@ -4,10 +4,10 @@ const mongoose = require("../node_modules/mongoose"); // se inyecta la dependenc
 let Person = require("../models/person"); //se define una variable "Person"
 
 //primer ruta, para mostrarnos el contenido de nuestra base de datos
-router.get("/persons", function(req,res, next){ 
+router.get("/listado", function(req,res, next){ 
     Person.find(function(err,persons){
         if(err) return next(err);
-        res.json(persons);
+        res.render('listado', {persons});
     });
 });
 
